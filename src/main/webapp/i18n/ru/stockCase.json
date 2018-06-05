@@ -1,0 +1,10 @@
+{
+    "pondgateApp": {
+        "StockCase" : {
+            "null": "",
+            "ADDED": "ADDED",
+            "REMOVED": "REMOVED",
+            "DIED": "DIED"
+        }
+    }
+}
