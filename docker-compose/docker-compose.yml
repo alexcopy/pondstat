@@ -1,0 +1,112 @@
+version: '2'
+services:
+    gateway-app:
+        image: gateway
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATA_MONGODB_URI=mongodb://gateway-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=gateway
+            - SECURITY_OAUTH2_CLIENT_ACCESS_TOKEN_URI=http://keycloak:9080/auth/realms/jhipster/protocol/openid-connect/token
+            - SECURITY_OAUTH2_CLIENT_USER_AUTHORIZATION_URI=http://keycloak:9080/auth/realms/jhipster/protocol/openid-connect/auth
+            - SECURITY_OAUTH2_RESOURCE_USER_INFO_URI=http://keycloak:9080/auth/realms/jhipster/protocol/openid-connect/userinfo
+            - SECURITY_OAUTH2_RESOURCE_TOKEN_INFO_URI=http://keycloak:9080/auth/realms/jhipster/protocol/openid-connect/token/introspect
+            - SECURITY_OAUTH2_RESOURCE_JWT_KEY_URI=http://keycloak:9080/auth/realms/jhipster
+            - JHIPSTER_SLEEP=30
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=gateway-elasticsearch:9300
+            - JHIPSTER_REGISTRY_PASSWORD=redcopy
+        ports:
+            - 8080:8080
+    gateway-mongodb:
+        image: mongo:3.4.10
+    gateway-elasticsearch:
+        image: elasticsearch:2.4.6
+    
+    natmob-app:
+        image: natmob
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATA_MONGODB_URI=mongodb://natmob-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=natmob
+            - JHIPSTER_SLEEP=30
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=natmob-elasticsearch:9300
+            - JHIPSTER_REGISTRY_PASSWORD=redcopy
+    natmob-mongodb:
+        image: mongo:3.4.10
+    natmob-elasticsearch:
+        image: elasticsearch:2.4.6
+    
+    pond-app:
+        image: pond
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATA_MONGODB_URI=mongodb://pond-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=pond
+            - JHIPSTER_SLEEP=30
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=pond-elasticsearch:9300
+            - JHIPSTER_REGISTRY_PASSWORD=redcopy
+    pond-mongodb:
+        image: mongo:3.4.10
+    pond-elasticsearch:
+        image: elasticsearch:2.4.6
+    
+    pondtemp-app:
+        image: pondtemp
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_DATA_MONGODB_URI=mongodb://pondtemp-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=pondtemp
+            - JHIPSTER_SLEEP=30
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=pondtemp-elasticsearch:9300
+            - JHIPSTER_REGISTRY_PASSWORD=redcopy
+    pondtemp-mongodb:
+        image: mongo:3.4.10
+    pondtemp-elasticsearch:
+        image: elasticsearch:2.4.6
+    
+    jhipster-registry:
+        extends:
+            file: jhipster-registry.yml
+            service: jhipster-registry
+
+    jhipster-elasticsearch:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-elasticsearch
+    jhipster-logstash:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-logstash
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-console:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-console
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-import-dashboards:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-import-dashboards
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-curator:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-curator
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-zipkin:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-zipkin
+        depends_on:
+            - jhipster-elasticsearch
