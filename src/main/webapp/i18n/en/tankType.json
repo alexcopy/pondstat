@@ -1,9 +1,0 @@
-{
-    "pondgateApp": {
-        "TankType" : {
-            "null": "",
-            "POND": "POND",
-            "AQUARIUM": "AQUARIUM"
-        }
-    }
-}
