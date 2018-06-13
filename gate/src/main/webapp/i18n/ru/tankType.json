@@ -1,0 +1,9 @@
+{
+    "gateApp": {
+        "TankType" : {
+            "null": "",
+            "POND": "POND",
+            "AQUARIUM": "AQUARIUM"
+        }
+    }
+}

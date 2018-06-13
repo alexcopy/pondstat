@@ -1,0 +1,32 @@
+
+{
+    "gateApp": {
+        "chemicalAnalysis" : {
+            "home": {
+                "title": "Chemical Analyses",
+                "createLabel": "Create a new Chemical Analysis",
+                "createOrEditLabel": "Create or edit a Chemical Analysis"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Chemical Analysis {{ id }}?"
+            },
+            "detail": {
+                "title": "Chemical Analysis"
+            },
+            "date": "Date",
+            "nO2": "N O 2",
+            "nO3": "N O 3",
+            "nH4": "N H 4",
+            "ph": "Ph",
+            "tempVal": "Temp Val",
+            "timestamp": "Timestamp"
+        }
+    },
+    "pondApp": {
+        "chemicalAnalysis" : {
+            "created": "A new Chemical Analysis is created with identifier {{ param }}",
+            "updated": "A Chemical Analysis is updated with identifier {{ param }}",
+            "deleted": "A Chemical Analysis is deleted with identifier {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<div>
+    <h2>
+        <span jhiTranslate="gateApp.tank.home.title">Tanks</span>
+        <button class="btn btn-primary float-right jh-create-entity create-tank-my-suffix" [routerLink]="['/', { outlets: { popup: ['tank-my-suffix-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="gateApp.tank.home.createLabel">
+            Create new Tank
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="tanks">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="gateApp.tank.tankName">Tank Name</span></th>
+            <th><span jhiTranslate="gateApp.tank.tankType">Tank Type</span></th>
+            <th><span jhiTranslate="gateApp.tank.description">Description</span></th>
+            <th><span jhiTranslate="gateApp.tank.timestamp">Timestamp</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tank of tanks ;trackBy: trackId">
+                <td><a [routerLink]="['../tank-my-suffix', tank.id ]">{{tank.id}}</a></td>
+                <td>{{tank.tankName}}</td>
+                <td jhiTranslate="{{'gateApp.TankType.' + tank.tankType}}">{{tank.tankType}}</td>
+                <td>{{tank.description}}</td>
+                <td>{{tank.timestamp}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../tank-my-suffix', tank.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tank-my-suffix/'+ tank.id + '/edit'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'tank-my-suffix/'+ tank.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

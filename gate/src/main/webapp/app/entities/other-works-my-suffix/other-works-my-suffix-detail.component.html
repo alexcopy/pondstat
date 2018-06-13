@@ -1,0 +1,46 @@
+
+<div *ngIf="otherWorks">
+    <h2><span jhiTranslate="gateApp.otherWorks.detail.title">Other Works</span> {{otherWorks.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.otherWorks.date">Date</span></dt>
+        <dd>
+            <span>{{otherWorks.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.otherWorks.reason">Reason</span></dt>
+        <dd>
+            <span>{{otherWorks.reason}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.otherWorks.qty">Qty</span></dt>
+        <dd>
+            <span>{{otherWorks.qty}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.otherWorks.descripton">Descripton</span></dt>
+        <dd>
+            <span>{{otherWorks.descripton}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.otherWorks.tempVal">Temp Val</span></dt>
+        <dd>
+            <span>{{otherWorks.tempVal}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.otherWorks.timestamp">Timestamp</span></dt>
+        <dd>
+            <span>{{otherWorks.timestamp}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'other-works-my-suffix/'+ otherWorks.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

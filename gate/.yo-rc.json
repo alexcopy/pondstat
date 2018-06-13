@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "ru.gpsbox.natmob",
-      "nativeLanguage": "en"
+      "nativeLanguage": "en",
+      "microservicePath": "/Users/alexredko/Projects/Java/jhipstnew/pond"
     },
     "jhipsterVersion": "4.14.4",
     "baseName": "gate",

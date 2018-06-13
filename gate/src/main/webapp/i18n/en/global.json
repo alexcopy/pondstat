@@ -7,6 +7,16 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "locationMySuffix": "Location",
+                "tankMySuffix": "Tank",
+                "tempMeterMySuffix": "Temp Meter",
+                "meterReadingMySuffix": "Meter Reading",
+                "filterPumpCleaningMySuffix": "Filter Pump Cleaning",
+                "waterChangeMySuffix": "Water Change",
+                "liveStockMySuffix": "Live Stock",
+                "chemicalAnalysisMySuffix": "Chemical Analysis",
+                "chemicalsMySuffix": "Chemicals",
+                "otherWorksMySuffix": "Other Works",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

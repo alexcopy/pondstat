@@ -1,0 +1,38 @@
+
+<div *ngIf="tank">
+    <h2><span jhiTranslate="gateApp.tank.detail.title">Tank</span> {{tank.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.tank.tankName">Tank Name</span></dt>
+        <dd>
+            <span>{{tank.tankName}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.tank.tankType">Tank Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'gateApp.TankType.' + tank.tankType}}">{{tank.tankType}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.tank.description">Description</span></dt>
+        <dd>
+            <span>{{tank.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.tank.timestamp">Timestamp</span></dt>
+        <dd>
+            <span>{{tank.timestamp}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'tank-my-suffix/'+ tank.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

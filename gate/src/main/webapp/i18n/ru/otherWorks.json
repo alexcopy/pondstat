@@ -1,0 +1,31 @@
+
+{
+    "gateApp": {
+        "otherWorks" : {
+            "home": {
+                "title": "Other Works",
+                "createLabel": "Создать новый Other Works",
+                "createOrEditLabel": "Создать или отредактировать Other Works"
+            },
+            "delete": {
+                "question": "Вы уверены что хотите удалить Other Works {{ id }}?"
+            },
+            "detail": {
+                "title": "Other Works"
+            },
+            "date": "Date",
+            "reason": "Reason",
+            "qty": "Qty",
+            "descripton": "Descripton",
+            "tempVal": "Temp Val",
+            "timestamp": "Timestamp"
+        }
+    },
+    "pondApp": {
+        "otherWorks" : {
+            "created": "Новый Other Works создан с идентификатором {{ param }}",
+            "updated": "Other Works обновлен с идентификатором {{ param }}",
+            "deleted": "Other Works удален с идентификатором {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+
+{
+    "gateApp": {
+        "tank" : {
+            "home": {
+                "title": "Tanks",
+                "createLabel": "Создать новый Tank",
+                "createOrEditLabel": "Создать или отредактировать Tank"
+            },
+            "delete": {
+                "question": "Вы уверены что хотите удалить Tank {{ id }}?"
+            },
+            "detail": {
+                "title": "Tank"
+            },
+            "tankName": "Tank Name",
+            "tankType": "Tank Type",
+            "description": "Description",
+            "timestamp": "Timestamp"
+        }
+    },
+    "pondApp": {
+        "tank" : {
+            "created": "Новый Tank создан с идентификатором {{ param }}",
+            "updated": "Tank обновлен с идентификатором {{ param }}",
+            "deleted": "Tank удален с идентификатором {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,50 @@
+
+<div *ngIf="chemicalAnalysis">
+    <h2><span jhiTranslate="gateApp.chemicalAnalysis.detail.title">Chemical Analysis</span> {{chemicalAnalysis.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.chemicalAnalysis.date">Date</span></dt>
+        <dd>
+            <span>{{chemicalAnalysis.date | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.chemicalAnalysis.nO2">N O 2</span></dt>
+        <dd>
+            <span>{{chemicalAnalysis.nO2}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.chemicalAnalysis.nO3">N O 3</span></dt>
+        <dd>
+            <span>{{chemicalAnalysis.nO3}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.chemicalAnalysis.nH4">N H 4</span></dt>
+        <dd>
+            <span>{{chemicalAnalysis.nH4}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.chemicalAnalysis.ph">Ph</span></dt>
+        <dd>
+            <span>{{chemicalAnalysis.ph}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.chemicalAnalysis.tempVal">Temp Val</span></dt>
+        <dd>
+            <span>{{chemicalAnalysis.tempVal}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.chemicalAnalysis.timestamp">Timestamp</span></dt>
+        <dd>
+            <span>{{chemicalAnalysis.timestamp}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'chemical-analysis-my-suffix/'+ chemicalAnalysis.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

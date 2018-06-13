@@ -1,0 +1,28 @@
+
+{
+    "gateApp": {
+        "tempMeter" : {
+            "home": {
+                "title": "Temp Meters",
+                "createLabel": "Создать новый Temp Meter",
+                "createOrEditLabel": "Создать или отредактировать Temp Meter"
+            },
+            "delete": {
+                "question": "Вы уверены что хотите удалить Temp Meter {{ id }}?"
+            },
+            "detail": {
+                "title": "Temp Meter"
+            },
+            "readingDate": "Reading Date",
+            "tempVal": "Temp Val",
+            "timestamp": "Timestamp"
+        }
+    },
+    "pondApp": {
+        "tempMeter" : {
+            "created": "Новый Temp Meter создан с идентификатором {{ param }}",
+            "updated": "Temp Meter обновлен с идентификатором {{ param }}",
+            "deleted": "Temp Meter удален с идентификатором {{ param }}"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+
+{
+    "gateApp": {
+        "liveStock" : {
+            "home": {
+                "title": "Live Stocks",
+                "createLabel": "Создать новый Live Stock",
+                "createOrEditLabel": "Создать или отредактировать Live Stock"
+            },
+            "delete": {
+                "question": "Вы уверены что хотите удалить Live Stock {{ id }}?"
+            },
+            "detail": {
+                "title": "Live Stock"
+            },
+            "date": "Date",
+            "reason": "Reason",
+            "description": "Description",
+            "qty": "Qty",
+            "tempVal": "Temp Val",
+            "timestamp": "Timestamp"
+        }
+    },
+    "pondApp": {
+        "liveStock" : {
+            "created": "Новый Live Stock создан с идентификатором {{ param }}",
+            "updated": "Live Stock обновлен с идентификатором {{ param }}",
+            "deleted": "Live Stock удален с идентификатором {{ param }}"
+        }
+    }
+}

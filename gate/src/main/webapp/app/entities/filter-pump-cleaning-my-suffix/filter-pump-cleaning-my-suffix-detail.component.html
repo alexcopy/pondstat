@@ -1,0 +1,38 @@
+
+<div *ngIf="filterPumpCleaning">
+    <h2><span jhiTranslate="gateApp.filterPumpCleaning.detail.title">Filter Pump Cleaning</span> {{filterPumpCleaning.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="gateApp.filterPumpCleaning.cleaningDate">Cleaning Date</span></dt>
+        <dd>
+            <span>{{filterPumpCleaning.cleaningDate | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.filterPumpCleaning.description">Description</span></dt>
+        <dd>
+            <span>{{filterPumpCleaning.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.filterPumpCleaning.tempVal">Temp Val</span></dt>
+        <dd>
+            <span>{{filterPumpCleaning.tempVal}}</span>
+        </dd>
+        <dt><span jhiTranslate="gateApp.filterPumpCleaning.timestamp">Timestamp</span></dt>
+        <dd>
+            <span>{{filterPumpCleaning.timestamp}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'filter-pump-cleaning-my-suffix/'+ filterPumpCleaning.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

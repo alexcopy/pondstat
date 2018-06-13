@@ -1,0 +1,32 @@
+
+{
+    "gateApp": {
+        "chemicalAnalysis" : {
+            "home": {
+                "title": "Chemical Analyses",
+                "createLabel": "Создать новый Chemical Analysis",
+                "createOrEditLabel": "Создать или отредактировать Chemical Analysis"
+            },
+            "delete": {
+                "question": "Вы уверены что хотите удалить Chemical Analysis {{ id }}?"
+            },
+            "detail": {
+                "title": "Chemical Analysis"
+            },
+            "date": "Date",
+            "nO2": "N O 2",
+            "nO3": "N O 3",
+            "nH4": "N H 4",
+            "ph": "Ph",
+            "tempVal": "Temp Val",
+            "timestamp": "Timestamp"
+        }
+    },
+    "pondApp": {
+        "chemicalAnalysis" : {
+            "created": "Новый Chemical Analysis создан с идентификатором {{ param }}",
+            "updated": "Chemical Analysis обновлен с идентификатором {{ param }}",
+            "deleted": "Chemical Analysis удален с идентификатором {{ param }}"
+        }
+    }
+}
