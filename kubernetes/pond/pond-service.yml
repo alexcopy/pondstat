@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pond
+  namespace: default
+  labels:
+    app: pond
+spec:
+  selector:
+    app: pond
+  ports:
+  - name: web
+    port: 8081
