@@ -10,20 +10,12 @@ Launch all your infrastructure by running: `docker-compose up -d`.
 - [JHipster Registry](http://localhost:8761)
 
 ### Applications and dependencies:
-- gateway (gateway application)
-- gateway's mongodb database
-- gateway's elasticsearch search engine
-- natmob (microservice application)
-- natmob's mongodb database
-- natmob's elasticsearch search engine
+- gate (gateway application)
+- gate's mariadb database
 - pond (microservice application)
-- pond's mongodb database
+- pond's mariadb database
 - pond's elasticsearch search engine
-- pondtemp (microservice application)
-- pondtemp's mongodb database
-- pondtemp's elasticsearch search engine
 
 ### Additional Services:
 
-- [JHipster Console](http://localhost:5601)
-- [Zipkin](http://localhost:9411)
+- [Keycloak server](http://localhost:9080)

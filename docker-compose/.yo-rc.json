@@ -1,21 +1,14 @@
 {
   "generator-jhipster": {
     "appsFolders": [
-      "gateway",
-      "natmob",
-      "pond",
-      "pondtemp"
+      "gate",
+      "pond"
     ],
-    "directoryPath": "/Users/alexredko/Projects/Java/jhipstnew/",
+    "directoryPath": "../",
     "gatewayType": "zuul",
-    "clusteredDbApps": [],
-    "monitoring": "elk",
-    "consoleOptions": [
-      "curator",
-      "zipkin"
-    ],
+    "monitoring": "no",
     "serviceDiscoveryType": "eureka",
-    "adminPassword": "redcopy",
-    "jwtSecretKey": "38e0175ee1e0842ecd793b322119cde57d9cb700"
+    "adminPassword": "admin",
+    "jwtSecretKey": "b7282574fc5df4afb4e5b70f29f4fca27c8f93e1"
   }
 }
